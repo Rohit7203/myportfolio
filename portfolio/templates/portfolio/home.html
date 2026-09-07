@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <style>
+
+        /* ---------- GENERAL ---------- */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+
+        /* ---------- NAVIGATION ---------- */
+
+        nav {
+            background: #222;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
+        .about {
+            padding: 60px 10%;
+            background: #eeeeee;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 10px auto;
+            line-height: 1.7;
+            color: #555;
+        }
+
+
+        /* ---------- SKILLS ---------- */
+
+        .skills {
+            padding: 60px 10%;
+            background: white;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #222;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+
+        /* ---------- PROJECTS ---------- */
+
+        .projects {
+            padding: 60px 10%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            margin: 25px auto;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .project-card h3 {
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .project-card p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .project-image {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-buttons {
+            margin-top: 20px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            background: #222;
+            color: white;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .project-btn:hover {
+            background: #555;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact {
+            padding: 60px 10%;
+            background: #eeeeee;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 12px 0;
+        }
+
+        .contact a {
+            color: #222;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+/* ---------- MOBILE RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .about,
+    .skills,
+    .projects,
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .about h2,
+    .skills h2,
+    .projects h2,
+    .contact h2 {
+        font-size: 30px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 24px;
+    }
+
+    .project-btn {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .skill {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+}
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <h1>Hello, I'm Rohit</h1>
+
+        <p>Python & Django Developer</p>
+
+        <p>
+            Welcome to my portfolio website.
+        </p>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a passionate Python and Django developer interested in
+            building web applications and learning new technologies.
+        </p>
+
+        <p>
+            I enjoy working with Python, Django, HTML, CSS, JavaScript
+            and databases to create useful and user-friendly applications.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="skills" id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Python</div>
+            <div class="skill">Django</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Bootstrap</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <h2>My Projects</h2>
+
+        {% for project in projects %}
+
+        <div class="project-card">
+
+            {% if project.image %}
+
+            <img
+                src="{{ project.image.url }}"
+                alt="{{ project.title }}"
+                class="project-image"
+            >
+
+            {% endif %}
+
+
+            <h3>{{ project.title }}</h3>
+
+            <p>
+                {{ project.description }}
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                {{ project.technologies }}
+            </p>
+
+
+            <div class="project-buttons">
+
+                {% if project.github_url %}
+
+                <a
+                    href="{{ project.github_url }}"
+                    target="_blank"
+                    class="project-btn"
+                >
+                    GitHub
+                </a>
+
+                {% endif %}
+
+
+                {% if project.live_url %}
+
+                <a
+                    href="{{ project.live_url }}"
+                    target="_blank"
+                    class="project-btn"
+                >
+                    Live Demo
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        {% empty %}
+
+        <p>No projects added yet.</p>
+
+        {% endfor %}
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            Interested in working together?
+            Feel free to contact me.
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            kumarrht87@gmail.com
+        </p>
+
+        <p>
+            <strong>GitHub:</strong>
+
+            <a
+                href="https://github.com/Rohit7203"
+                target="_blank"
+            >
+                Visit my GitHub
+            </a>
+
+        </p>
+
+        <p>
+            <strong>LinkedIn:</strong>
+
+            <a
+                href="https://www.linkedin.com/in/rohit-kumar-524111300/ "
+                target="_blank"
+            >
+                Visit my LinkedIn
+            </a>
+
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Rohit. All Rights Reserved.
+        </p>
+
+        <p>
+            Built with Python & Django
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: myportfolio
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn myportfolio.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+        
