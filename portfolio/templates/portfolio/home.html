@@ -8,7 +8,9 @@
     <title>My Portfolio</title>
 
     <style>
-        /* ---------- GENERAL ---------- */
+        /* =========================
+           GENERAL
+        ========================= */
 
         html {
             scroll-behavior: smooth;
@@ -22,7 +24,9 @@
         }
 
 
-        /* ---------- NAVIGATION ---------- */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             background: #222;
@@ -45,7 +49,9 @@
         }
 
 
-        /* ---------- HERO ---------- */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             text-align: center;
@@ -64,7 +70,9 @@
         }
 
 
-        /* ---------- ABOUT ---------- */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
             padding: 60px 10%;
@@ -85,7 +93,9 @@
         }
 
 
-        /* ---------- SKILLS ---------- */
+        /* =========================
+           SKILLS
+        ========================= */
 
         .skills {
             padding: 60px 10%;
@@ -114,49 +124,84 @@
         }
 
 
-        /* ---------- PROJECTS ---------- */
+        /* =========================
+           PROJECTS
+        ========================= */
 
-        .projects {
-            padding: 60px 10%;
-            background: #f5f5f5;
-            text-align: center;
+        #projects {
+            background: #f8f9fa;
+            padding: 80px 10%;
         }
 
-        .projects h2 {
-            font-size: 35px;
-            margin-bottom: 30px;
+        #projects h2 {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .project-card {
             background: white;
-            padding: 30px;
-            margin: 25px auto;
-            border-radius: 12px;
-            max-width: 800px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            text-align: left;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .project-card h3 {
-            font-size: 28px;
-            margin-top: 0;
-        }
-
-        .project-card p {
-            line-height: 1.6;
-            color: #555;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .project-image {
             width: 100%;
-            max-height: 350px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        }
+
+        .project-card-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-card h3 {
+            font-size: 23px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .technologies {
+            margin-top: 10px;
+        }
+
+        .technologies strong {
+            color: #333;
         }
 
         .project-buttons {
-            margin-top: 20px;
+            margin-top: auto;
+            padding-top: 20px;
         }
 
         .project-btn {
@@ -164,17 +209,39 @@
             background: #222;
             color: white;
             padding: 10px 20px;
-            margin-right: 10px;
-            border-radius: 6px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border-radius: 8px;
             text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         .project-btn:hover {
             background: #555;
+            transform: translateY(-2px);
+        }
+
+        .live-btn {
+            background: #0d6efd;
+        }
+
+        .live-btn:hover {
+            background: #084298;
+        }
+
+        .no-projects {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            grid-column: 1 / -1;
+            padding: 30px;
         }
 
 
-        /* ---------- CONTACT ---------- */
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             padding: 60px 10%;
@@ -202,7 +269,9 @@
         }
 
 
-        /* ---------- FOOTER ---------- */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #222;
@@ -215,7 +284,19 @@
             margin: 5px 0;
         }
 
-        /* ---------- MOBILE RESPONSIVE ---------- */
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 992px) {
+
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
 
         @media (max-width: 768px) {
 
@@ -243,30 +324,39 @@
 
             .about,
             .skills,
-            .projects,
             .contact {
                 padding: 50px 20px;
             }
 
             .about h2,
             .skills h2,
-            .projects h2,
             .contact h2 {
                 font-size: 30px;
             }
 
-            .project-card {
-                padding: 20px;
+            #projects {
+                padding: 60px 20px;
+            }
+
+            #projects h2 {
+                font-size: 30px;
+                margin-bottom: 35px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card-body {
+                padding: 25px;
             }
 
             .project-card h3 {
-                font-size: 24px;
+                font-size: 21px;
             }
 
             .project-btn {
-                display: block;
-                text-align: center;
-                margin: 10px 0;
+                display: inline-block;
             }
 
             .skill {
@@ -275,132 +365,35 @@
             }
 
         }
-        /* =========================
-   Projects Section
-========================= */
-
-#projects {
-    background: #f8f9fa;
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-#projects h2 {
-    font-size: 38px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #222;
-}
-
-/* Project Card */
-
-#projects .card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    background: #ffffff;
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-/* Hover Effect */
-
-#projects .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Card Body */
-
-#projects .card-body {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Project Title */
-
-#projects .card-title {
-    font-size: 23px;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 15px;
-}
-
-/* Project Description */
-
-#projects .card-text {
-    color: #666;
-    line-height: 1.7;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-
-/* Technologies */
-
-#projects .card-body p strong {
-    color: #333;
-}
-
-/* Buttons */
-
-#projects .btn {
-    margin-top: auto;
-    border-radius: 8px;
-    padding: 10px 22px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-/* GitHub / View Project button */
-
-#projects .btn-dark:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-
-/* =========================
-   Responsive Design
-========================= */
-
-@media (max-width: 768px) {
-
-    #projects {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    #projects h2 {
-        font-size: 30px;
-    }
-
-    #projects .card-body {
-        padding: 25px;
-    }
-
-    #projects .card-title {
-        font-size: 21px;
-    }
-}
     </style>
 </head>
 
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
     <nav>
+
         <a href="#home">Home</a>
+
         <a href="#about">About</a>
+
         <a href="#skills">Skills</a>
+
         <a href="#projects">Projects</a>
+
         <a href="#contact">Contact</a>
+
     </nav>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero" id="home">
 
@@ -415,7 +408,9 @@
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
     <section class="about" id="about">
 
@@ -434,7 +429,9 @@
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- =========================
+         SKILLS
+    ========================= -->
 
     <section class="skills" id="skills">
 
@@ -443,12 +440,19 @@
         <div class="skills-container">
 
             <div class="skill">Python</div>
+
             <div class="skill">Django</div>
+
             <div class="skill">HTML</div>
+
             <div class="skill">CSS</div>
+
             <div class="skill">JavaScript</div>
+
             <div class="skill">SQL</div>
+
             <div class="skill">Git & GitHub</div>
+
             <div class="skill">Bootstrap</div>
 
         </div>
@@ -456,129 +460,117 @@
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
-    
-    <section id="projects" class="py-5">
-        <div class="container">
+    <section id="projects">
 
-            <h2 class="text-center mb-5">My Projects</h2>
+        <h2>My Projects</h2>
 
-            <div class="row g-4">
-
-                <!-- Project 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
-
-                        <div class="card-body">
-                            <h4 class="card-title">Student Management System</h4>
-
-                            <p class="card-text">
-                                A Django-based web application for managing
-                                student records, including adding, editing,
-                                searching and deleting students.
-                            </p>
-
-                            <p>
-                                <strong>Technologies:</strong>
-                                Python, Django, HTML, CSS, SQLite
-                            </p>
-
-                            <a href="https://github.com/Rohit7203/django-project" target="_blank" class="btn btn-dark">
-                                GitHub
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="projects-container">
 
 
-                <!-- Project 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+            {% for project in projects %}
 
-                        <div class="card-body">
-                            <h4 class="card-title">Django Portfolio</h4>
-
-                            <p class="card-text">
-                                A personal portfolio website developed using
-                                Django, HTML and CSS to showcase my skills,
-                                projects and experience.
-                            </p>
-
-                            <p>
-                                <strong>Technologies:</strong>
-                                Python, Django, HTML, CSS
-                            </p>
-
-                            <a href="https://github.com/Rohit7203/myportfolio" target="_blank" class="btn btn-dark">
-                                GitHub
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="project-card">
 
 
-                <!-- Project 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+                <!-- Project Image -->
 
-                        <div class="card-body">
-                            <h4 class="card-title">Data Analytics Dashboard</h4>
+                {% if project.image %}
 
-                            <p class="card-text">
-                                An interactive dashboard created to analyze
-                                data and present useful business insights
-                                using SQL and Power BI.
-                            </p>
+                <img
+                    src="{{ project.image.url }}"
+                    alt="{{ project.title }}"
+                    class="project-image"
+                >
 
-                            <p>
-                                <strong>Technologies:</strong>
-                                SQL, Power BI, PostgreSQL
-                            </p>
+                {% endif %}
 
-                            <a href="#" class="btn btn-dark">
-                                View Project
-                            </a>
-                        </div>
+
+                <!-- Project Content -->
+
+                <div class="project-card-body">
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+
+                    <p>
+                        {{ project.description }}
+                    </p>
+
+
+                    <p class="technologies">
+
+                        <strong>Technologies:</strong>
+
+                        {{ project.technologies }}
+
+                    </p>
+
+
+                    <!-- Buttons -->
+
+                    <div class="project-buttons">
+
+
+                        {% if project.github_url %}
+
+                        <a
+                            href="{{ project.github_url }}"
+                            target="_blank"
+                            class="project-btn"
+                        >
+                            GitHub
+                        </a>
+
+                        {% endif %}
+
+
+                        {% if project.live_url %}
+
+                        <a
+                            href="{{ project.live_url }}"
+                            target="_blank"
+                            class="project-btn live-btn"
+                        >
+                            Live Demo
+                        </a>
+
+                        {% endif %}
+
 
                     </div>
+
                 </div>
 
             </div>
+
+
+            {% empty %}
+
+            <div class="no-projects">
+
+                <p>
+                    No projects added yet.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+
         </div>
+
     </section>
-    ```
-    {% for project in projects %}
 
-    <div class="project-card">
-        {% if project.image %}
-        <img src="{{ project.image.url }}" alt="{{ project.title }}">
-        {% endif %}
 
-        <h3>{{ project.title }}</h3>
-
-        <p>{{ project.description }}</p>
-
-        <p><strong>Technologies:</strong> {{ project.technologies }}</p>
-
-        {% if project.github_url %}
-        <a href="{{ project.github_url }}" target="_blank">
-            GitHub
-        </a>
-        {% endif %}
-
-        {% if project.live_url %}
-        <a href="{{ project.live_url }}" target="_blank">
-            Live Demo
-        </a>
-        {% endif %}
-    </div>
-
-   
-
-    <!-- CONTACT -->
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section class="contact" id="contact">
 
@@ -589,24 +581,38 @@
             Feel free to contact me.
         </p>
 
+
         <p>
+
             <strong>Email:</strong>
+
             kumarrht87@gmail.com
+
         </p>
 
+
         <p>
+
             <strong>GitHub:</strong>
 
-            <a href="https://github.com/Rohit7203" target="_blank">
+            <a
+                href="https://github.com/Rohit7203"
+                target="_blank"
+            >
                 Visit my GitHub
             </a>
 
         </p>
 
+
         <p>
+
             <strong>LinkedIn:</strong>
 
-            <a href="https://www.linkedin.com/in/rohit-kumar-524111300/ " target="_blank">
+            <a
+                href="https://www.linkedin.com/in/rohit-kumar-524111300/"
+                target="_blank"
+            >
                 Visit my LinkedIn
             </a>
 
@@ -615,7 +621,9 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
