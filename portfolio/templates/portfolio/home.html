@@ -1,775 +1,643 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Portfolio</title>
+```
+<title>Rohit Kumar | Portfolio</title>
 
-    <style>
-        /* =========================
-           GENERAL
-        ========================= */
+<style>
+    /* =========================
+       GENERAL
+    ========================= */
 
-        html {
-            scroll-behavior: smooth;
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #222;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+        background: #222;
+        padding: 20px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+        text-align: center;
+        padding: 100px 20px;
+        background: white;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        color: #666;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+        padding: 60px 10%;
+        background: #eeeeee;
+        text-align: center;
+    }
+
+    .about h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        max-width: 800px;
+        margin: 10px auto;
+        line-height: 1.7;
+        color: #555;
+    }
+
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+        padding: 60px 10%;
+        background: white;
+        text-align: center;
+    }
+
+    .skills h2 {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    .skills-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .skill {
+        background: #222;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    #projects {
+        background: #f8f9fa;
+        padding: 80px 10%;
+    }
+
+    #projects h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        color: #222;
+    }
+
+    .projects-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-icon {
+        height: 180px;
+        background: #222;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 55px;
+    }
+
+    .project-card-body {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .project-card h3 {
+        font-size: 23px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #222;
+    }
+
+    .project-card p {
+        color: #666;
+        line-height: 1.7;
+        font-size: 15px;
+    }
+
+    .technologies {
+        margin-top: 10px;
+    }
+
+    .technologies strong {
+        color: #333;
+    }
+
+    .project-buttons {
+        margin-top: auto;
+        padding-top: 20px;
+    }
+
+    .project-btn {
+        display: inline-block;
+        background: #222;
+        color: white;
+        padding: 10px 20px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .project-btn:hover {
+        background: #555;
+        transform: translateY(-2px);
+    }
+
+    .live-btn {
+        background: #0d6efd;
+    }
+
+    .live-btn:hover {
+        background: #084298;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+        padding: 60px 10%;
+        background: #eeeeee;
+        text-align: center;
+    }
+
+    .contact h2 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .contact p {
+        margin: 12px 0;
+    }
+
+    .contact a {
+        color: #222;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 25px;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+
+    /* =========================
+       MOBILE RESPONSIVE
+    ========================= */
+
+    @media (max-width: 992px) {
+
+        .projects-container {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-        }
+    }
 
 
-        /* =========================
-           NAVIGATION
-        ========================= */
+    @media (max-width: 768px) {
 
         nav {
-            background: #222;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 15px 5px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            display: inline-block;
+            margin: 5px 8px;
+            font-size: 14px;
         }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
 
         .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: white;
+            padding: 70px 20px;
         }
 
         .hero h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
+            font-size: 36px;
         }
 
         .hero p {
-            font-size: 20px;
-            color: #666;
+            font-size: 17px;
         }
 
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about {
-            padding: 60px 10%;
-            background: #eeeeee;
-            text-align: center;
+        .about,
+        .skills,
+        .contact {
+            padding: 50px 20px;
         }
 
-        .about h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
+        .about h2,
+        .skills h2,
+        .contact h2 {
+            font-size: 30px;
         }
-
-        .about p {
-            max-width: 800px;
-            margin: 10px auto;
-            line-height: 1.7;
-            color: #555;
-        }
-
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills {
-            padding: 60px 10%;
-            background: white;
-            text-align: center;
-        }
-
-        .skills h2 {
-            font-size: 35px;
-            margin-bottom: 30px;
-        }
-
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .skill {
-            background: #222;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 16px;
-        }
-
-
-        /* =========================
-           PROJECTS
-        ========================= */
 
         #projects {
-            background: #f8f9fa;
-            padding: 80px 10%;
+            padding: 60px 20px;
         }
 
         #projects h2 {
-            text-align: center;
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 50px;
-            color: #222;
+            font-size: 30px;
+            margin-bottom: 35px;
         }
 
         .projects-container {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+            grid-template-columns: 1fr;
         }
 
         .project-card-body {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .project-card h3 {
-            font-size: 23px;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: #222;
-        }
-
-        .project-card p {
-            color: #666;
-            line-height: 1.7;
-            font-size: 15px;
-        }
-
-        .technologies {
-            margin-top: 10px;
-        }
-
-        .technologies strong {
-            color: #333;
-        }
-
-        .project-buttons {
-            margin-top: auto;
-            padding-top: 20px;
-        }
-
-        .project-btn {
-            display: inline-block;
-            background: #222;
-            color: white;
-            padding: 10px 20px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .project-btn:hover {
-            background: #555;
-            transform: translateY(-2px);
-        }
-
-        .live-btn {
-            background: #0d6efd;
-        }
-
-        .live-btn:hover {
-            background: #084298;
-        }
-
-        .no-projects {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            grid-column: 1 / -1;
-            padding: 30px;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            padding: 60px 10%;
-            background: #eeeeee;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            margin: 12px 0;
-        }
-
-        .contact a {
-            color: #222;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
             padding: 25px;
         }
 
-        footer p {
-            margin: 5px 0;
+        .project-card h3 {
+            font-size: 21px;
         }
 
-
-        /* =========================
-           MOBILE RESPONSIVE
-        ========================= */
-
-        @media (max-width: 992px) {
-
-            .projects-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
+        .skill {
+            padding: 10px 18px;
+            font-size: 14px;
         }
 
-
-        @media (max-width: 768px) {
-
-            nav {
-                padding: 15px 5px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 5px 8px;
-                font-size: 14px;
-            }
-
-            .hero {
-                padding: 70px 20px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .about,
-            .skills,
-            .contact {
-                padding: 50px 20px;
-            }
-
-            .about h2,
-            .skills h2,
-            .contact h2 {
-                font-size: 30px;
-            }
-
-            #projects {
-                padding: 60px 20px;
-            }
-
-            #projects h2 {
-                font-size: 30px;
-                margin-bottom: 35px;
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card-body {
-                padding: 25px;
-            }
-
-            .project-card h3 {
-                font-size: 21px;
-            }
-
-            .project-btn {
-                display: inline-block;
-            }
-
-            .skill {
-                padding: 10px 18px;
-                font-size: 14px;
-            }
-
-        }
-        .projects-section {
-    padding: 80px 5%;
-    background: #f8f9fa;
-}
-
-.projects-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
-}
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.project-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-}
-
-.project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-card-body {
-    padding: 25px;
-}
-
-.project-card-body h3 {
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.project-card-body p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.project-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.project-btn {
-    display: inline-block;
-    padding: 10px 18px;
-    background: #222;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-.live-btn {
-    background: #007bff;
-}
-
-.project-btn:hover {
-    opacity: 0.8;
-}
-
-.no-projects {
-    text-align: center;
-    width: 100%;
-}
-
-@media (max-width: 992px) {
-    .projects-container {
-        grid-template-columns: repeat(2, 1fr);
     }
-}
+</style>
+```
 
-@media (max-width: 768px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-    </style>
 </head>
-
 
 <body>
 
+```
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+<nav>
 
-    <nav>
+    <a href="#home">Home</a>
 
-        <a href="#home">Home</a>
+    <a href="#about">About</a>
 
-        <a href="#about">About</a>
+    <a href="#skills">Skills</a>
 
-        <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
 
-        <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
 
-        <a href="#contact">Contact</a>
+</nav>
 
-    </nav>
 
+<!-- =========================
+     HERO
+========================= -->
 
-    <!-- =========================
-         HERO
-    ========================= -->
+<section class="hero" id="home">
 
-    <section class="hero" id="home">
+    <h1>Hello, I'm Rohit</h1>
 
-        <h1>Hello, I'm Rohit</h1>
+    <p>Python & Django Developer</p>
 
-        <p>Python & Django Developer</p>
+    <p>
+        Welcome to my portfolio website.
+    </p>
 
-        <p>
-            Welcome to my portfolio website.
-        </p>
+</section>
 
-    </section>
 
+<!-- =========================
+     ABOUT
+========================= -->
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
+<section class="about" id="about">
 
-    <section class="about" id="about">
+    <h2>About Me</h2>
 
-        <h2>About Me</h2>
+    <p>
+        I am a passionate Python and Django developer interested in
+        building web applications and learning new technologies.
+    </p>
 
-        <p>
-            I am a passionate Python and Django developer interested in
-            building web applications and learning new technologies.
-        </p>
+    <p>
+        I enjoy working with Python, Django, HTML, CSS, JavaScript
+        and databases to create useful and user-friendly applications.
+    </p>
 
-        <p>
-            I enjoy working with Python, Django, HTML, CSS, JavaScript
-            and databases to create useful and user-friendly applications.
-        </p>
+</section>
 
-    </section>
 
+<!-- =========================
+     SKILLS
+========================= -->
 
-    <!-- =========================
-         SKILLS
-    ========================= -->
+<section class="skills" id="skills">
 
-    <section class="skills" id="skills">
+    <h2>My Skills</h2>
 
-        <h2>My Skills</h2>
+    <div class="skills-container">
 
-        <div class="skills-container">
+        <div class="skill">Python</div>
 
-            <div class="skill">Python</div>
+        <div class="skill">Django</div>
 
-            <div class="skill">Django</div>
+        <div class="skill">HTML</div>
 
-            <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
 
-            <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
 
-            <div class="skill">JavaScript</div>
+        <div class="skill">SQL</div>
 
-            <div class="skill">SQL</div>
+        <div class="skill">Git & GitHub</div>
 
-            <div class="skill">Git & GitHub</div>
+        <div class="skill">Bootstrap</div>
 
-            <div class="skill">Bootstrap</div>
+    </div>
 
-        </div>
+</section>
 
-    </section>
 
+<!-- =========================
+     PROJECTS
+========================= -->
 
-    <!-- =========================
-         PROJECTS
-    ========================= -->
+<section id="projects">
 
-    <section id="projects">
+    <h2>My Projects</h2>
 
-        <h2>My Projects</h2>
+    <div class="projects-container">
 
-        <div class="projects-container">
 
+        <!-- PROJECT 1 -->
 
-            {% for project in projects %}
+        <div class="project-card">
 
-            <div class="project-card">
+            <div class="project-icon">
+                🎓
+            </div>
 
+            <div class="project-card-body">
 
-                <!-- Project Image -->
+                <h3>
+                    Student Management System
+                </h3>
 
-                {% if project.image %}
+                <p>
+                    A Django-based web application for managing
+                    student records. The application provides
+                    functionality to add, edit, delete and manage
+                    student information.
+                </p>
 
-                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-image">
+                <p class="technologies">
 
-                {% endif %}
+                    <strong>Technologies:</strong>
 
+                    Python, Django, HTML, CSS, SQLite
 
-                <!-- Project Content -->
+                </p>
 
-                <div class="project-card-body">
+                <div class="project-buttons">
 
-                    <h3>
-                        {{ project.title }}
-                    </h3>
+                    <a href="https://github.com/Rohit7203/django-project"
+                       target="_blank"
+                       class="project-btn">
 
+                        GitHub
 
-                    <p>
-                        {{ project.description }}
-                    </p>
-
-
-                    <p class="technologies">
-
-                        <strong>Technologies:</strong>
-
-                        {{ project.technologies }}
-
-                    </p>
-                    <section id="projects" class="projects-section">
-                        <div class="container">
-
-                            <h2>My Projects</h2>
-
-                            <div class="projects-container">
-
-                                {% for project in projects %}
-
-                                <div class="project-card">
-
-                                    {% if project.image %}
-                                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-image">
-                                    {% endif %}
-
-                                    <div class="project-card-body">
-
-                                        <h3>{{ project.title }}</h3>
-
-                                        <p>
-                                            {{ project.description }}
-                                        </p>
-
-                                        <p>
-                                            <strong>Technologies:</strong>
-                                            {{ project.technologies }}
-                                        </p>
-
-                                        <div class="project-buttons">
-
-                                            {% if project.github_url %}
-                                            <a href="{{ project.github_url }}" target="_blank" class="project-btn">
-                                                GitHub
-                                            </a>
-                                            {% endif %}
-
-                                            {% if project.live_url %}
-                                            <a href="{{ project.live_url }}" target="_blank"
-                                                class="project-btn live-btn">
-                                                Live Demo
-                                            </a>
-                                            {% endif %}
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                {% empty %}
-
-                                <div class="no-projects">
-                                    <p>No projects added yet.</p>
-                                </div>
-
-                                {% endfor %}
-
-                            </div>
-
-                        </div>
-                    </section>
-
-                    <!-- Buttons -->
-
-                    <div class="project-buttons">
-
-
-                        {% if project.github_url %}
-
-                        <a href="{{ project.github_url }}" target="_blank" class="project-btn">
-                            GitHub
-                        </a>
-
-                        {% endif %}
-
-
-                        {% if project.live_url %}
-
-                        <a href="{{ project.live_url }}" target="_blank" class="project-btn live-btn">
-                            Live Demo
-                        </a>
-
-                        {% endif %}
-
-
-                    </div>
+                    </a>
 
                 </div>
 
             </div>
 
+        </div>
 
-            {% empty %}
 
-            <div class="no-projects">
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                💻
+            </div>
+
+            <div class="project-card-body">
+
+                <h3>
+                    Django Portfolio
+                </h3>
 
                 <p>
-                    No projects added yet.
+                    A personal portfolio website developed using
+                    Django. The website showcases my skills,
+                    projects, experience and contact information.
                 </p>
+
+                <p class="technologies">
+
+                    <strong>Technologies:</strong>
+
+                    Python, Django, HTML, CSS, JavaScript
+
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/Rohit7203/myportfolio"
+                       target="_blank"
+                       class="project-btn">
+
+                        GitHub
+
+                    </a>
+
+                    <a href="https://myportfolio-opl4.onrender.com/"
+                       target="_blank"
+                       class="project-btn live-btn">
+
+                        Live Demo
+
+                    </a>
+
+                </div>
 
             </div>
 
-            {% endfor %}
+        </div>
 
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                📊
+            </div>
+
+            <div class="project-card-body">
+
+                <h3>
+                    Data Analytics Dashboard
+                </h3>
+
+                <p>
+                    An interactive data analytics dashboard designed
+                    to analyze business data and present useful
+                    insights through visual reports and dashboards.
+                </p>
+
+                <p class="technologies">
+
+                    <strong>Technologies:</strong>
+
+                    SQL, Power BI, PostgreSQL
+
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#"
+                       class="project-btn">
+
+                        Project
+
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+<!-- =========================
+     CONTACT
+========================= -->
 
-    <section class="contact" id="contact">
+<section class="contact" id="contact">
 
-        <h2>Contact Me</h2>
+    <h2>Contact Me</h2>
 
-        <p>
-            Interested in working together?
-            Feel free to contact me.
-        </p>
+    <p>
+        Interested in working together?
+        Feel free to contact me.
+    </p>
 
+    <p>
 
-        <p>
+        <strong>Email:</strong>
 
-            <strong>Email:</strong>
+        kumarrht87@gmail.com
 
-            kumarrht87@gmail.com
+    </p>
 
-        </p>
+    <p>
 
+        <strong>GitHub:</strong>
 
-        <p>
-
-            <strong>GitHub:</strong>
-
-            <a href="https://github.com/Rohit7203" target="_blank">
-                Visit my GitHub
-            </a>
-
-        </p>
-
-
-        <p>
-
-            <strong>LinkedIn:</strong>
-
-            <a href="https://www.linkedin.com/in/rohit-kumar-524111300/" target="_blank">
-                Visit my LinkedIn
-            </a>
-
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Rohit. All Rights Reserved.
-        </p>
-
-        <p>
-            Built with Python & Django
-        </p>
-
-    </footer>
-
-
-</body>
-
-</html>
+        <a href="
+```
